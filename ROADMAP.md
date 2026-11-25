@@ -11,6 +11,7 @@ Todas las etapas comienzan como **Pendiente**. Cambiar el estado requiere eviden
 
 ## Documentos que completan el plan
 
+- [Ruta de aprendizaje](docs/learning-path.md): conceptos, secuencia didactica, practicas, glosario y estandar para material academico.
 - [Definicion de producto](docs/product-definition.md): usuarios, necesidades, casos de uso, requisitos funcionales y no funcionales, alcance del MVP y supuestos abiertos.
 - [Arquitectura objetivo](docs/target-architecture.md): responsabilidades, contratos, flujos de lectura y escritura, ciclo de vida de ejecucion, datos y fronteras de confianza.
 - [Calidad y seguridad](docs/quality-and-security.md): activos, amenazas, invariantes, niveles de prueba, dataset, metricas y gates de release.
@@ -237,6 +238,7 @@ CLI estable y primer adaptador de plataforma con guia de instalacion y desinstal
 
 - Cada release enlaza commit, pruebas, cambios incompatibles y dependencias.
 - Las instrucciones de instalacion y actualizacion se prueban desde cero.
+- La guia de aprendizaje define prerrequisitos, conceptos, recorrido por codigo, practicas y limites; sus afirmaciones enlazan implementacion o evidencia.
 - Existe una politica visible de soporte, vulnerabilidades y divulgacion responsable.
 - Las issues distinguen fallos, solicitudes de funciones y riesgos de seguridad.
 
@@ -342,6 +344,7 @@ Un hito no pasa al siguiente solo porque su funcionalidad "parezca funcionar". D
 3. **Operacion:** instrucciones de configuracion, fallo, recuperacion y limites conocidos.
 4. **Seguridad:** permisos, datos y frontera de confianza revisados para el nuevo componente.
 5. **Compatibilidad:** version y consumidores afectados identificados.
+6. **Comprension:** el concepto nuevo se explica con lenguaje accesible, ejemplo anclado al codigo, evidencia, limitaciones y una forma de comprobar el aprendizaje.
 
 Bloqueadores obligatorios:
 
@@ -360,6 +363,7 @@ Si un gate se bloquea, se mantiene el ultimo hito estable, se registra el riesgo
 - Mantener cada tarea `PLAT-NNN` vinculada a un issue o PR y a un requisito `FR-NNN` o riesgo.
 - Dividir tareas grandes cuando tengan varios propietarios, fronteras o resultados verificables.
 - El trabajo que cambia permisos, aprobaciones o almacenamiento requiere casos negativos y de recuperacion, no solo el camino feliz.
+- Los cambios de conceptos, contratos o garantias actualizan la guia academica y distinguen lo implementado de lo propuesto.
 - Un cambio de alcance mayor debe indicar usuario afectado, problema, alternativas, coste, riesgos y evidencia esperada.
 - Una integracion adicional no se acepta como avance si duplica controles ya existentes o carece de prueba smoke.
 - Actualizar estados del roadmap junto con la evidencia, no en un cambio posterior sin trazabilidad.

@@ -12,7 +12,7 @@ Ese repositorio es una **aplicacion de referencia**, no el runtime ni la platafo
 
 ### Linea base conocida
 
-Al preparar este roadmap, el agente base ejecuta **33 pruebas locales** sin credenciales de proveedor. Incluye controles deterministas, flujo de aprobacion, herramientas locales/MCP, auditoria y observabilidad. Las evaluaciones de trayectoria con modelos reales aun requieren credenciales y resultados publicados; la persistencia durable de aprobaciones y una demo audiovisual tambien estan pendientes. Esta separacion evita confundir capacidades implementadas con trabajo futuro.
+Estado actualizado al 26/11/2026: el agente base ejecuta **47 pruebas locales** sin credenciales de proveedor. Incluye controles deterministas, flujo de aprobacion, herramientas locales/MCP, auditoria y observabilidad. Las evaluaciones de trayectoria con modelos reales aun requieren credenciales y resultados publicados; la persistencia durable de aprobaciones y una demo reproducible tambien estan pendientes. La primera extraccion hacia un runtime configurable esta publicada, pero falta un segundo agente consumidor. [ROADMAP.md](ROADMAP.md) conserva el estado y la evidencia del trabajo. Esta separacion evita confundir capacidades implementadas con trabajo futuro.
 
 ## Que producto se quiere construir
 
@@ -51,6 +51,7 @@ El producto inicial debe resolver un problema completo y demostrable. La amplitu
 ## Documentacion del proyecto
 
 - [ROADMAP.md](ROADMAP.md) — etapas, entregables, dependencias, gates y estimacion.
+- [docs/learning-path.md](docs/learning-path.md) — ruta formativa, unidades, proyecto final, glosario y estandar editorial para los materiales academicos.
 - [docs/product-definition.md](docs/product-definition.md) — usuarios, flujos, requisitos y limites del MVP.
 - [docs/target-architecture.md](docs/target-architecture.md) — componentes, contratos, flujos de datos y decisiones tecnologicas propuestas.
 - [docs/quality-and-security.md](docs/quality-and-security.md) — modelo de amenazas, controles, estrategia de pruebas y gates de release.
@@ -69,7 +70,7 @@ El producto inicial debe resolver un problema completo y demostrable. La amplitu
 | 6. CLI y adaptadores | Inicializacion y ejecucion reproducible con una primera integracion | P1 |
 | 7. Distribucion y mantenimiento | Releases, compatibilidad, guias operativas y proceso de seguridad | P1 |
 
-La prioridad no significa que el trabajo este iniciado. Todos los hitos permanecen pendientes hasta que se adjunte evidencia; el estado detallado se mantiene en [ROADMAP.md](ROADMAP.md).
+La prioridad no significa que el trabajo este iniciado. El estado actual de los hitos 0 y 1 es **En curso**; los hitos posteriores permanecen pendientes. El estado detallado y su evidencia se mantienen en [ROADMAP.md](ROADMAP.md).
 
 ## No objetivos del MVP
 
@@ -91,7 +92,8 @@ El MVP se considera util cuando un desarrollador que no conoce el codigo puede, 
 - pausar y reanudar una accion sensible sin cambiar los argumentos aprobados ni repetir el efecto;
 - correr el conjunto de pruebas y generar un informe de evals;
 - inspeccionar una traza sin encontrar prompts, secretos ni argumentos sensibles;
-- entender los requisitos, limites y pasos de despliegue desde la documentacion.
+- entender los requisitos, limites y pasos de despliegue desde la documentacion;
+- estudiar cada concepto a traves de una ruta con prerrequisitos, explicacion, codigo, pruebas, practicas y limitaciones.
 
 Los umbrales de eval se fijaran a partir de una linea base medida; no se inventan en este documento.
 
@@ -117,5 +119,6 @@ La estimacion de **12–20 meses** asume una persona con unas 20 horas semanales
 - Antes de abrir trabajo de una etapa posterior, comprobar sus dependencias en [ROADMAP.md](ROADMAP.md).
 - Todo cambio de alcance debe incluir motivacion, impacto, alternativas y evidencia esperada.
 - Cada tarea de implementacion debe poder mapearse a un requisito o riesgo en la documentacion.
+- Los cambios de conceptos, contratos y garantias deben mantener actualizada la [ruta de aprendizaje](docs/learning-path.md), enlazando codigo, evidencia y limites.
 - Registrar decisiones que afecten interfaces, persistencia, permisos o compatibilidad como ADRs futuros.
 - No marcar como completado trabajo planificado sin enlaces a pruebas, release o demostracion reproducible.

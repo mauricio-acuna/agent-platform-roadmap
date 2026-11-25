@@ -38,6 +38,12 @@ El primer producto de referencia es un agente de operaciones de pedidos. Su alca
 - Puede bloquear la publicacion cuando haya una regresion critica.
 - Necesita evidencia tecnica, no una declaracion del modelo.
 
+### Estudiante o docente
+
+- Usa los repositorios como fuente para una guia, laboratorio o curso sobre sistemas de agentes.
+- Necesita explicaciones progresivas de conceptos, ejemplos anclados al codigo, ejercicios verificables y referencias primarias.
+- Debe poder distinguir con claridad lo implementado, lo parcial, lo propuesto y lo que aun no se ha probado.
+
 ## 4. Casos de uso
 
 ### UC-01: crear agente desde plantilla
@@ -96,6 +102,7 @@ Los identificadores permiten enlazar requisitos con issues, implementacion y pru
 | FR-018 | Cargar skills solo tras validar manifiesto, permisos y compatibilidad | P1 |
 | FR-019 | Aplicar controles de retencion y borrado verificables | P1 |
 | FR-020 | Crear una vista de operador para buscar estado y solicitudes pendientes | P2 |
+| FR-021 | Mantener una guia academica que conecte conceptos, decisiones, codigo, pruebas, limitaciones y actividades de aprendizaje | P1 |
 
 P0 significa necesario para la primera plataforma que acepte acciones externas; P1 amplía la experiencia de desarrollo y evaluacion; P2 requiere validar necesidades reales antes de iniciar.
 
@@ -127,6 +134,7 @@ P0 significa necesario para la primera plataforma que acepte acciones externas; 
 - Dependencias por modulo y contratos documentados.
 - Compatibilidad y politica de deprecacion declaradas.
 - Logs y errores accionables sin tragar excepciones ni ofrecer fallos como respuestas exitosas.
+- Conceptos y garantias explicados para lectores en formacion, con enlaces a implementacion, evidencia y limites actuales.
 
 ### Portabilidad
 
@@ -163,6 +171,7 @@ La plataforma no se considera validada por el numero de paquetes, agentes o inte
 3. **Comportamiento seguro observable:** las pruebas comprueban que las acciones prohibidas no se ejecutan incluso si el modelo las solicita.
 4. **Operabilidad:** una ejecucion puede explicarse, detenerse, reanudarse y reconciliarse.
 5. **Calidad medida:** los cambios se comparan contra una linea base reproducible y se publican fallos conocidos.
+6. **Comprension academica:** un estudiante puede seguir la ruta formativa, explicar los controles principales y reproducir una practica sin depender de afirmaciones no verificadas.
 
 ## 9. Supuestos y preguntas que siguen abiertas
 
