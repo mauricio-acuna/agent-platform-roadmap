@@ -40,7 +40,7 @@ Los limites entre componentes deben ser contratos pequenos y testeables. El runt
 
 ## Hito 0 — Consolidar el agente base
 
-**Estado:** Pendiente
+**Estado:** En curso - el agente base esta publicado; quedan pendientes las evals con modelos reales, la persistencia durable y la demo reproducible.
 **Dependencia:** ninguna
 **Proposito:** convertir el agente existente en una demo verificable y una referencia de comportamiento para las siguientes etapas.
 
@@ -67,8 +67,8 @@ Una version etiquetada del agente de operaciones con pruebas, demo y resultados 
 
 ## Hito 1 — Extraer un runtime reutilizable
 
-**Estado:** Pendiente
-**Dependencia:** Hito 0
+**Estado:** En curso - primera extraccion implementada; aun falta el segundo agente consumidor.
+**Dependencia:** agente base de Hito 0 disponible. Sus gates pendientes siguen abiertos y no se consideran completados por iniciar este trabajo.
 
 ### Trabajo
 
@@ -88,6 +88,14 @@ Una version etiquetada del agente de operaciones con pruebas, demo y resultados 
 ### Entregable
 
 Paquete de runtime versionado, con ejemplo de referencia y guia para crear un agente nuevo.
+
+### Progreso
+
+- Se introdujo `AgentDefinition` para validar identidad, prompt, manifiesto de herramientas, aprobaciones y limite de pasos por agente.
+- El grafo, planner, validación de argumentos y ejecutor MCP usan la definición del mismo agente; el grafo y los contratos de ejecución ya no importan directamente el dominio de pedidos.
+- El agente de pedidos es ahora la configuración de referencia. Se documentó cómo construir un perfil de solo lectura y se añadieron pruebas de configuración, aislamiento del manifiesto y uso por el planner.
+- Verificación local: 47 pruebas pasan. Evidencia publicada: [commit 6ba141e](https://github.com/mauricio-acuna/ops-agent-mcp/commit/6ba141e).
+- No se declara cumplido el hito: faltan contratos de aprobación/almacenamiento completos, un segundo agente consumidor y el paquete/guía versionados del entregable.
 
 ## Hito 2 — Registro de herramientas y motor de politicas
 
@@ -301,6 +309,11 @@ No usar una sola puntuacion agregada para afirmar que un agente es seguro o apto
 ## Registro de cambios de estado
 
 Agregar aqui fecha, hito, enlace a evidencia y responsable cada vez que un hito cambie de estado. No registrar como completado trabajo que solo este planificado.
+
+| Fecha | Hito | Cambio y evidencia |
+|---|---|---|
+| 2026-11-26 | 0 | En curso: el agente base esta publicado; las evals reales, la persistencia durable y la demo siguen pendientes. |
+| 2026-11-26 | 1 | En curso: primera extraccion publicada en [ops-agent-mcp, commit 6ba141e](https://github.com/mauricio-acuna/ops-agent-mcp/commit/6ba141e); 47 pruebas locales pasan. El segundo agente aun no existe. |
 
 ## Estimacion de esfuerzo por hito
 
