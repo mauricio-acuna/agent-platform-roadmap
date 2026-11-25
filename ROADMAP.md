@@ -9,6 +9,15 @@
 
 Todas las etapas comienzan como **Pendiente**. Cambiar el estado requiere evidencia en el repositorio de implementacion, una release, una prueba reproducible o un informe de evaluacion.
 
+## Documentos que completan el plan
+
+- [Definicion de producto](docs/product-definition.md): usuarios, necesidades, casos de uso, requisitos funcionales y no funcionales, alcance del MVP y supuestos abiertos.
+- [Arquitectura objetivo](docs/target-architecture.md): responsabilidades, contratos, flujos de lectura y escritura, ciclo de vida de ejecucion, datos y fronteras de confianza.
+- [Calidad y seguridad](docs/quality-and-security.md): activos, amenazas, invariantes, niveles de prueba, dataset, metricas y gates de release.
+- [Plan de entrega](docs/delivery-plan.md): 54 tareas iniciales identificadas (`PLAT-NNN`), prioridad, dependencias y criterios de aceptacion.
+
+El roadmap define el **orden y los gates**; los documentos auxiliares explican el **producto, diseño y trabajo ejecutable**. Una decision propuesta no debe leerse como implementacion existente.
+
 ## Arquitectura objetivo
 
 ```text
@@ -292,3 +301,52 @@ No usar una sola puntuacion agregada para afirmar que un agente es seguro o apto
 ## Registro de cambios de estado
 
 Agregar aqui fecha, hito, enlace a evidencia y responsable cada vez que un hito cambie de estado. No registrar como completado trabajo que solo este planificado.
+
+## Estimacion de esfuerzo por hito
+
+Las siguientes cifras son rangos de planificacion de una sola persona con experiencia general en desarrollo, no compromisos. Incluyen diseno, implementacion, pruebas, documentacion y aprendizaje del dominio; no incluyen soporte de una comunidad grande.
+
+| Hito | Esfuerzo orientativo | Principal incertidumbre |
+|---|---:|---|
+| 0. Consolidar el agente base | 3–5 semanas-persona | Disponibilidad y variacion de proveedor/modelo en evals reales |
+| 1. Runtime reutilizable | 4–6 semanas-persona | Si el segundo caso permite una abstraccion genuina |
+| 2. Registro y politicas | 4–7 semanas-persona | Identidad, capacidades y comportamiento de servidores MCP reales |
+| 3. Persistencia y memoria | 4–6 semanas-persona | Idempotencia y reconciliacion con sistemas externos |
+| 4. Evals y observabilidad | 4–6 semanas-persona | Calidad de datasets, privacidad y variabilidad de LLM |
+| 5. Skills y plantillas | 3–5 semanas-persona | Compatibilidad y procedencia del contenido distribuido |
+| 6. CLI e integraciones | 3–6 semanas-persona | Instalacion, permisos y diferencias entre plataformas |
+| 7. Release y mantenimiento | 2–4 semanas-persona | Soporte, feedback, actualizaciones y respuesta a vulnerabilidades |
+| **Total aproximado** | **27–45 semanas-persona** | Los hitos pueden cambiar de alcance segun evidencia |
+
+Una semana-persona representa aproximadamente 40 horas de trabajo enfocado. Con 20 horas semanales, equivale a unos 12–20 meses de calendario; con 12–16 horas semanales, puede tomar aproximadamente 16–35 meses. La estimacion debe actualizarse al cerrar cada hito y aprender de los resultados reales.
+
+## Gates de salida y condiciones de bloqueo
+
+Un hito no pasa al siguiente solo porque su funcionalidad "parezca funcionar". Debe entregar:
+
+1. **Artefacto:** codigo, contrato, guia, informe o release que se pueda inspeccionar.
+2. **Prueba:** evidencia automatizada que falle antes del cambio o cubra el riesgo introducido.
+3. **Operacion:** instrucciones de configuracion, fallo, recuperacion y limites conocidos.
+4. **Seguridad:** permisos, datos y frontera de confianza revisados para el nuevo componente.
+5. **Compatibilidad:** version y consumidores afectados identificados.
+
+Bloqueadores obligatorios:
+
+- una accion sensible puede ejecutarse sin aprobacion valida;
+- la aprobacion sigue siendo valida despues de cambiar el payload, identidad o politica relevante;
+- un retry puede duplicar un efecto y el sistema reporta exito/fallo sin reconciliarlo;
+- el aislamiento permite leer o reanudar ejecuciones ajenas;
+- prompts, secretos o argumentos sensibles aparecen en logs/telemetria;
+- una skill, descripcion de herramienta o respuesta del modelo puede elevar permisos;
+- las instrucciones publicas no reproducen la prueba o demo que afirman.
+
+Si un gate se bloquea, se mantiene el ultimo hito estable, se registra el riesgo residual y se crea una tarea de correccion; no se oculta la regresion mediante una puntuacion agregada.
+
+## Reglas para administrar el backlog
+
+- Mantener cada tarea `PLAT-NNN` vinculada a un issue o PR y a un requisito `FR-NNN` o riesgo.
+- Dividir tareas grandes cuando tengan varios propietarios, fronteras o resultados verificables.
+- El trabajo que cambia permisos, aprobaciones o almacenamiento requiere casos negativos y de recuperacion, no solo el camino feliz.
+- Un cambio de alcance mayor debe indicar usuario afectado, problema, alternativas, coste, riesgos y evidencia esperada.
+- Una integracion adicional no se acepta como avance si duplica controles ya existentes o carece de prueba smoke.
+- Actualizar estados del roadmap junto con la evidencia, no en un cambio posterior sin trazabilidad.
