@@ -29,15 +29,27 @@ Al finalizar la ruta, el estudiante deberia poder:
 
 | Orden | Documento | Uso didactico |
 |---|---|---|
-| 1 | [README.md](../README.md) | Vision, alcance, usuarios y estado resumido |
-| 2 | [docs/product-definition.md](product-definition.md) | Problemas, actores, casos de uso y requisitos |
-| 3 | [docs/quality-and-security.md](quality-and-security.md) | Activos, amenazas, invariantes, pruebas y evaluacion |
-| 4 | [docs/target-architecture.md](target-architecture.md) | Fronteras, contratos, flujos y recuperacion |
-| 5 | [ROADMAP.md](../ROADMAP.md) | Secuencia de hitos, gates y estado con evidencia |
-| 6 | [docs/delivery-plan.md](delivery-plan.md) | Tareas trazables, dependencias y criterios de aceptacion |
-| 7 | [ops-agent-mcp: guia de aprendizaje](https://github.com/mauricio-acuna/ops-agent-mcp/blob/main/docs/learning-guide.md) | Recorrido practico por una implementacion concreta |
+| 1 | [Guia conceptual de agentes](agent-concepts-guide.md) | Vocabulario y modelo mental antes de estudiar una implementacion |
+| 2 | [README.md](../README.md) | Vision, alcance, usuarios y estado resumido |
+| 3 | [docs/product-definition.md](product-definition.md) | Problemas, actores, casos de uso y requisitos |
+| 4 | [docs/quality-and-security.md](quality-and-security.md) | Activos, amenazas, invariantes, pruebas y evaluacion |
+| 5 | [docs/target-architecture.md](target-architecture.md) | Fronteras, contratos, flujos y recuperacion |
+| 6 | [ROADMAP.md](../ROADMAP.md) | Secuencia de hitos, gates y estado con evidencia |
+| 7 | [docs/delivery-plan.md](delivery-plan.md) | Tareas trazables, dependencias y criterios de aceptacion |
+| 8 | [ops-agent-mcp: guia de aprendizaje](https://github.com/mauricio-acuna/ops-agent-mcp/blob/main/docs/learning-guide.md) | Recorrido practico por una implementacion concreta |
 
 El orden importa: primero se entiende el problema; despues las amenazas y arquitectura; finalmente se examina el trabajo planificado. Leer una propuesta como si ya estuviera implementada es un error de interpretacion.
+
+## Recorrido gradual entre repositorios
+
+Los materiales cumplen papeles distintos y se estudian en secuencia:
+
+1. **Conceptos:** comenzar por [la guia conceptual](agent-concepts-guide.md) para entender modelos, agentes, herramientas, MCP y controles verificables.
+2. **Aplicacion de referencia:** seguir [ops-agent-mcp](https://github.com/mauricio-acuna/ops-agent-mcp) y su [guia de aprendizaje](https://github.com/mauricio-acuna/ops-agent-mcp/blob/main/docs/learning-guide.md) para contrastar esos conceptos con codigo y pruebas.
+3. **Plataforma:** volver a la definicion de producto, arquitectura, seguridad y roadmap de este repositorio para estudiar que se abstrae, por que y con que evidencia.
+4. **Comparacion:** distinguir en cada paso lo implementado en la aplicacion, lo propuesto por la plataforma y lo que sigue pendiente de demostrar.
+
+Esta ruta conecta los proyectos sin duplicar la documentacion especifica de cada uno. La guia del agente es fuente de verdad para recorrer su codigo; este repositorio lo es para la vision, arquitectura objetivo y estado de la plataforma.
 
 ## Unidades de aprendizaje
 

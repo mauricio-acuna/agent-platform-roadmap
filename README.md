@@ -51,6 +51,7 @@ El producto inicial debe resolver un problema completo y demostrable. La amplitu
 ## Documentacion del proyecto
 
 - [ROADMAP.md](ROADMAP.md) — etapas, entregables, dependencias, gates y estimacion.
+- [docs/agent-concepts-guide.md](docs/agent-concepts-guide.md) — conceptos fundamentales de agentes, herramientas, MCP, aprobaciones y evidencia.
 - [docs/learning-path.md](docs/learning-path.md) — ruta formativa, unidades, proyecto final, glosario y estandar editorial para los materiales academicos.
 - [docs/product-definition.md](docs/product-definition.md) — usuarios, flujos, requisitos y limites del MVP.
 - [docs/target-architecture.md](docs/target-architecture.md) — componentes, contratos, flujos de datos y decisiones tecnologicas propuestas.

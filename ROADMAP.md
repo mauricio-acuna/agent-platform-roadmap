@@ -11,6 +11,7 @@ Todas las etapas comienzan como **Pendiente**. Cambiar el estado requiere eviden
 
 ## Documentos que completan el plan
 
+- [Guia conceptual de agentes](docs/agent-concepts-guide.md): vocabulario y fundamentos para estudiar agentes con herramientas, controles y evidencia.
 - [Ruta de aprendizaje](docs/learning-path.md): conceptos, secuencia didactica, practicas, glosario y estandar para material academico.
 - [Definicion de producto](docs/product-definition.md): usuarios, necesidades, casos de uso, requisitos funcionales y no funcionales, alcance del MVP y supuestos abiertos.
 - [Arquitectura objetivo](docs/target-architecture.md): responsabilidades, contratos, flujos de lectura y escritura, ciclo de vida de ejecucion, datos y fronteras de confianza.
